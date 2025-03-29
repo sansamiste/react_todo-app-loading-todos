@@ -16,7 +16,7 @@ export const Filter: React.FC<Props> = ({
         key={status}
         href={`#/${status.toLowerCase()}`}
         className={cn('filter__link', { selected: filterStatus === status })}
-        data-cy={`FilterLink${status}`}
+        data-cy={`FilterLink${status.charAt(0).toUpperCase() + status.slice(1)}`}
         onClick={event => {
           event.preventDefault();
           handleFilterChange(status);

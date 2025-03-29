@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [filterStatus, setFilterStatus] = useState<FilterStatus>(
-    FilterStatus.ALL,
+    FilterStatus.All,
   );
 
   useEffect(() => {
@@ -30,11 +30,11 @@ export const App: React.FC = () => {
   }, []);
 
   const filteredTodos = todos.filter(todo => {
-    if (filterStatus === FilterStatus.ACTIVE) {
+    if (filterStatus === FilterStatus.Active) {
       return !todo.completed;
     }
 
-    if (filterStatus === FilterStatus.COMPLETED) {
+    if (filterStatus === FilterStatus.Completed) {
       return todo.completed;
     }
 
@@ -73,7 +73,7 @@ export const App: React.FC = () => {
                 <TodoList
                   visibleTodos={filteredTodos}
                   toggleTodo={toggleTodo}
-                  deleteTodo={deleteTodo} // Передача deleteTodo
+                  deleteTodo={deleteTodo}
                 />
               )}
             </section>
